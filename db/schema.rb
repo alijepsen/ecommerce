@@ -43,14 +43,11 @@ ActiveRecord::Schema.define(version: 20161111230459) do
     t.string   "image"
     t.integer  "inventory"
     t.integer  "category_id"
-    t.integer  "cart_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["cart_id"], name: "index_products_on_cart_id", using: :btree
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
   end
 
   add_foreign_key "comments", "products"
-  add_foreign_key "products", "carts"
   add_foreign_key "products", "categories"
 end

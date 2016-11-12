@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products = Product.all
+    @products = @category.products
   end
 
   def show
@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
       redirect_to category_product_path(@category, @product)
     else
       render :edit
+    end
   end
 
   def destroy
@@ -40,17 +41,15 @@ class ProductsController < ApplicationController
   end
 
   private
-  def product_params
-    params.require(:product).permit(:name, :description, :price, :inventory, :image)
-  end
+    def product_params
+      params.require(:product).permit(:name, :description, :price, :inventory, :image)
+    end
 
-  def set_product
-    @product = @category.products.find(:params[:id])
-  end
+    def set_product
+      @product = @category.products.find(params[:id])
+    end
 
-  def set_category
-    @category = Category.find(:params[:category_id])
-  end
-
-  end
+    def set_category
+      @category = Category.find(params[:category_id])
+    end
 end

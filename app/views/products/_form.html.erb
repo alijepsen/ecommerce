@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <%= form_for [@category, @product] do |f| %>
+      <div class="col m6">
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true %>
+      </div>
+      <div class="col m6">
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+      </div>
+      <div class="col m6">
+        <%= f.label :price %>
+        <%= f.number_field :price, value: number_to_currency(f.object.price.to_f, delimiter: '', unit: ''), step: :any %>
+      </div>
+      <div class="col m6">
+        <%= f.label :inventory %>
+        <%= f.number_field :inventory %>
+      </div>
+      <div class="file-field input-field col s12">
+        <div class="btn">
+          <span>Image File</span>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload image file here">
+        </div>
+      </div>
+      </div>
+      <%= f.submit class: "btn teal white-text" %>
+    <% end %>
+  </div>
+</div>

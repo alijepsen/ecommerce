@@ -1,2 +1,26 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<div class="container">
+<h2 class="teal-text">Category: <%= @category.style %> </h2>
+
+<% if @products.any? %>
+  <h3 class="teal-text">Products</h3>
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col s12 m6 l6">
+           <div class="card white">
+             <div class="card-content teal-text">
+               <span class="card-title"> <%= product.name %> </span>
+               <p> Price: <%= product.price %> </p>
+             </div>
+           <div class="card-action">
+             <%= link_to 'Show', category_product_path(@category, product), :class => "teal-text text-lighten-2" %>
+             <%= link_to 'Edit', edit_category_product_path(@category, product), class: "teal-text text-lighten-2" %>
+             <%= link_to 'Delete', category_product_path(@category, product), class: "teal-text text-lighten-2", method: :delete, data: {confirm: 'Really Delete?'} %>
+           </div>
+           </div>
+       </div>
+      <% end %>
+    </div>
+<% end %>
+  <%= link_to 'Add Product', new_category_product_path(@category), class: 'btn teal' %>
+</div>
+
