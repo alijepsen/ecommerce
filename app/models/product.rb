@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  has_many :comments dependent: :destroy
+  has_many :comments, dependent: :destroy
   belongs_to :category
 
   has_attached_file :avatar, styles: {
