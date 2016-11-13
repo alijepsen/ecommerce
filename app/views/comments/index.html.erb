@@ -4,9 +4,8 @@
 <div class="container">
 	<%= link_to '<< Back', category_product_path(@category, @product), class: 'btn teal' %>
 
-	<h4 class="center">Average Rating: <%= @average.round(1) %></h4>
-
 	<% if @product.comments.any? %>
+	<h4 class="center">Average Rating: <%= @average.round(1) %></h4>
 		<div class="row">
 			<% @product.comments.each do |comment| %>
 				<div class="col s12">
