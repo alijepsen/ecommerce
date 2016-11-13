@@ -1,9 +1,22 @@
+<ul id="dropdown1" class="dropdown-content">
+  <% if @categories.any? %>
+  <% @categories.each do |category| %>
+  <li><%= link_to category.style, category_products_path(category) %></li>
+  <% end %>
+  <li class="divider"></li>
+  <% end %>
+  <li><% link_to 'View All', categories_path %></li>
+</ul>
 <nav class="teal darken-2">
   <div class="nav-wrapper">
     <a href="/" class="brand-logo">T-Shirt Town</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <ul id="nav-mobile" class="right">
       <li><a href="/about">About</a></li>
       <li><a href="/categories">Categories</a></li>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
     </ul>
   </div>
 </nav>
