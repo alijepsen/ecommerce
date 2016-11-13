@@ -11,7 +11,7 @@
   <br />
   Quantity on-hand: <i><%= @product.inventory %></i>
   <br />
-  Image: <i><%= @product.image%></i>
+  Image: <i><%= image_tag @product.avatar.url(:medium) %></i>
 </div>
 <br /><br />
 <div class="container">

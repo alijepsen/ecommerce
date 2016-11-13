@@ -6,7 +6,10 @@
     <div class="row">
       <% @products.each do |product| %>
         <div class="col s12 m6 l6">
-           <div class="card white">
+          <div class="card medium hoverable">
+           <div class="card-image waves-effect waves-light waves-block">
+              <%= image_tag product.avatar.url(:medium), class: "activator" %>
+        </div>
              <div class="card-content teal-text">
                <span class="card-title"> <%= product.name %> </span>
                <p> Price: <%= product.price %> </p>
@@ -16,11 +19,18 @@
              <%= link_to 'Edit', edit_category_product_path(@category, product), class: "teal-text text-lighten-2" %>
              <%= link_to 'Delete', category_product_path(@category, product), class: "teal-text text-lighten-2", method: :delete, data: {confirm: 'Really Delete?'} %>
            </div>
+           <div class="card-reveal">
+             <span class="card-title grey-text text-darken-4"><%= product.name %>
+             <p><%= product.description %></p>
+             <i class="material-icons right">close</i>
+             </span>
+           </div>
            </div>
        </div>
       <% end %>
     </div>
 <% end %>
+
   <%= link_to 'Add Product', new_category_product_path(@category), class: 'btn teal' %>
 </div>
 

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <%= form_for [@category, @product] do |f| %>
+    <%= form_for [@category, @product], html: { multipart: true} do |f| %>
       <div class="col m6">
         <%= f.label :name %>
         <%= f.text_field :name, required: true %>
@@ -23,6 +23,7 @@
         </div>
         <div class="file-path-wrapper">
           <input class="file-path validate" type="text" placeholder="Upload image file here">
+          <%= f.file_field :avatar %>
         </div>
       </div>
       </div>
