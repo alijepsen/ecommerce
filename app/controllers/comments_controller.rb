@@ -1,9 +1,11 @@
 class CommentsController < ApplicationController
   before_action :set_product
+  before_action :set_category
   before_action :set_comment, except: [:index, :new, :create]
 
   def index
   	@comments = @product.comments
+    @average = @comments.average(:rating)
   end
 
   def show
@@ -35,7 +37,7 @@ class CommentsController < ApplicationController
 
   def destroy
   	@comment.destroy
-  	redirect_to product_path(@product)
+  	redirect_to category_product_path(@category, @product)
   end
 
   private
@@ -46,6 +48,10 @@ class CommentsController < ApplicationController
 
   def set_product
   	@product = Product.find(params[:product_id])
+  end
+
+  def set_category
+    @category = @product.category_id
   end
 
   def set_comment

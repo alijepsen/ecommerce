@@ -1,2 +1,20 @@
-<h1>Comments#show</h1>
-<p>Find me in app/views/comments/show.html.erb</p>
+<div class="container">
+	<h4>Your comment for <%= @product.name %>:</h4>
+
+	<div class="row">
+		<div class="col s12">
+			<div class="card white">
+		  	<div class="card-content teal-text">
+		    	<span class="card-title">Rating: <%= @comment.rating %></span>
+		    	<p><%= @comment.review %></p>
+		  	</div>
+		  	<div class="card-action">
+		  		<%= link_to 'Edit', edit_product_comment_path(@product, @comment), :class => "teal-text text-lighten-2" %>
+		  		<%= link_to 'Delete', product_comment_path(@product, @comment), method: :delete, data: {confirm: 'Really delete comment?'}, :class => "teal-text text-lighten-2" %>
+		 		</div>
+			</div>
+		</div>
+	</div>
+
+	<%= link_to '<< Back To Product', category_product_path(@category, @product), class: 'btn teal' %>
+</div>

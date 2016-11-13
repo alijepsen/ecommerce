@@ -1,2 +1,8 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<div class="container">
+	<h3>Comment on <%= @product.name %></h3>
+	<div class="center">
+	<%= @product.image %>
+	</div>
+</div>
+
+<%= render(partial: 'form') %>
