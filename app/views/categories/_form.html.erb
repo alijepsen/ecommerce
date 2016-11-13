@@ -1,26 +1,12 @@
-<%= form_for(category) do |f| %>
+
+<div class= "container">
+<%= form_for @category do |f| %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :style %>
+    <%= f.text_field :style %>
   </div>
+<%= f.submit class: "btn teal white-text" %>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.number_field :price %>
-  </div>
-
-  <div class="field">
-    <%= f.label :inventory %>
-    <%= f.number_field :inventory %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit nil, class: 'btn' %>
-  </div>
 <% end %>
+</div> 

@@ -15,7 +15,7 @@ before_action :set_category, only: [:edit, :update, :show, :destroy]
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to category_path(@category)
+      redirect_to category_products_path(@category)
     else
       render :new
     end
@@ -26,7 +26,7 @@ before_action :set_category, only: [:edit, :update, :show, :destroy]
 
   def update
     if @category.update(category_params)
-      redirect_to category_path(@category)
+      redirect_to category_products_path(@category)
     else
       render :edit
     end
