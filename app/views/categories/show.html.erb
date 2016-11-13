@@ -1,2 +1,35 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class="row">
+        <div class="col s12 center">
+          <div class="card grey">
+            <div class="card-content white-text">
+              <span class="card-title">Category: <%= @category.style %> </span>
+              <p>Products <%= @products.name %> </p>
+            </div>
+
+            <div class="card-action">
+              <%= link_to 'Edit', edit_category_path(@category) %>
+              <%= link_to 'Delete', category_path(@category), method: :delete, data: {confirm: 'Delete this category?'} %>
+            </div>
+          </div>
+          <% if @products.any? %>
+          <h4> All Styles </h4>
+          <% @products.each do |product| %>
+          <div class="">
+        <div class="col s12 m3 l6">
+          <div class="card grey">
+            <div class="card-content white-text">
+              <span class="card-title"><%= category.style %></span>
+
+            </div>
+            <div class="card-action">
+              <%= link_to 'Show', category_product_path(@category, product) %>
+              <%= link_to 'Edit', edit_category_product_path(@category, product) %>
+              <%= link_to 'Delete', category_product_path(@category, product), method: :delete, data: {confirm: 'Delete product?'} %>
+            </div>
+          </div>
+        </div>
+      </div>
+          <% end %>
+        <% end %>
+
+    

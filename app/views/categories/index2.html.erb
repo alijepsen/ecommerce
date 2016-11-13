@@ -1,9 +1,9 @@
-<h1>T-shirt styles</h1>
+<h1>Categories</h1>
 <% if @categories.any? %>
   <table>
     <thead>
       <tr>
-        <th>Short-sleeve</th>
+        <th>Style</th>
         <th colspan="4"></th>
       </tr>
     </thead>
@@ -12,16 +12,16 @@
       <% @categories.each do |category| %>
         <tr>
           <td><%= link_to category.style, category_path(category) %></td>
-          <td><%= category.products.inventory %></td>
+          <td><%= category.product.name %></td>
           <td><%= link_to 'Edit', edit_category_path(category) %></td>
-          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Delete this category?' } %></td>
+          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% else %>
-  <h3>Sorry, this style is no longer available.</h3>
+  <h3>Sorry, no longer available.</h3>
 <% end %>
 
 <br>
-<%= link_to 'All Categories', categories_path, class: 'btn blue' %>
+<%= link_to 'All Categories', categories_path, class: 'btn' %>
