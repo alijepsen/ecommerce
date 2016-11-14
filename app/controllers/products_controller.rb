@@ -9,6 +9,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @comments = @product.comments
+    @average = @comments.average(:rating)
   end
 
   def new
