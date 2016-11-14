@@ -17,8 +17,8 @@
 </div>
 <br /><br />
 <div class="container">
-<%= link_to 'Edit', edit_category_product_path(@category, @product), class: "teal-text text-lighten-2" %> |
-<%= link_to 'Delete', category_product_path(@category, @product), class: "teal-text text-lighten-2", method: :delete, data: {confirm: 'Really Delete Product?'} %>
+<%= link_to 'Edit', edit_category_product_path(@category, @product), class: "brown-text text-lighten-2" %> |
+<%= link_to 'Delete', category_product_path(@category, @product), class: "brown-text text-lighten-2", method: :delete, data: {confirm: 'Really Delete Product?'} %>
 </div>
 <br /><br />
 <hr />
@@ -42,8 +42,8 @@
 			      	<p><%= comment.review %></p>
 			    	</div>
 			    	<div class="card-action">
-			    		<%= link_to 'Edit', edit_product_comment_path(@product, comment), :class => "teal-text text-lighten-2" %>
-			    		<%= link_to 'Delete', product_comment_path(@product, comment), method: :delete, data: {confirm: 'Really delete comment?'}, :class => "teal-text text-lighten-2" %>
+			    		<%= link_to 'Edit', edit_product_comment_path(@product, comment), :class => "brown-text text-lighten-2" %>
+			    		<%= link_to 'Delete', product_comment_path(@product, comment), method: :delete, data: {confirm: 'Really delete comment?'}, :class => "brown-text text-lighten-2" %>
 			   		</div>
 			  	</div>
 				</div>
@@ -54,8 +54,6 @@
 	<% end %>
 
 	<div class="center">
-		<%= link_to 'Add Comment', new_product_comment_path(@product), class: 'btn teal' %>
+		<%= link_to 'Add Comment', new_product_comment_path(@product), class: 'btn brown' %>
 	</div>
 </div>
-
-

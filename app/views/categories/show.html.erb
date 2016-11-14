@@ -7,7 +7,7 @@
             </div>
 
             <div class="card-action">
-              <%= link_to 'Edit', edit_category_path(@category) %>
+              <%= link_to 'Edit', edit_category_path(@category), class: "brown-text" %>
               <%= link_to 'Delete', category_path(@category), method: :delete, data: {confirm: 'Delete this category?'} %>
             </div>
           </div>
@@ -16,13 +16,13 @@
           <% @products.each do |product| %>
           <div class="">
         <div class="col s12 m3 l6">
-          <div class="card grey">
+          <div class="card brown">
             <div class="card-content white-text">
               <span class="card-title"><%= category.style %></span>
 
             </div>
             <div class="card-action">
-              <%= link_to 'Show', category_product_path(@category, product) %>
+              <%= link_to 'Show', category_product_path(@category, product), class: "brown-text" %>
               <%= link_to 'Edit', edit_category_product_path(@category, product) %>
               <%= link_to 'Delete', category_product_path(@category, product), method: :delete, data: {confirm: 'Delete product?'} %>
             </div>
@@ -31,5 +31,3 @@
       </div>
           <% end %>
         <% end %>
-
-    

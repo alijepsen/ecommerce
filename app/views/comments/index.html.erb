@@ -2,7 +2,7 @@
 <hr>
 
 <div class="container">
-	<%= link_to '<< Back', category_product_path(@category, @product), class: 'btn teal' %>
+	<%= link_to '<< Back', category_product_path(@category, @product), class: 'btn brown' %>
 
 	<% if @product.comments.any? %>
 	<h4 class="center">Average Rating: <%= @average.round(1) %></h4>
@@ -10,13 +10,13 @@
 			<% @product.comments.each do |comment| %>
 				<div class="col s12">
 			  	<div class="card white">
-			    	<div class="card-content teal-text">
+			    	<div class="card-content brown-text">
 			      	<span class="card-title">Rating: <%= comment.rating %></span>
 			      	<p><%= comment.review %></p>
 			    	</div>
 			    	<div class="card-action">
-			    		<%= link_to 'Edit', edit_product_comment_path(@product, comment), :class => "teal-text text-lighten-2" %>
-			    		<%= link_to 'Delete', product_comment_path(@product, comment), method: :delete, data: {confirm: 'Really delete comment?'}, :class => "teal-text text-lighten-2" %>
+			    		<%= link_to 'Edit', edit_product_comment_path(@product, comment), :class => "brown-text text-lighten-2" %>
+			    		<%= link_to 'Delete', product_comment_path(@product, comment), method: :delete, data: {confirm: 'Really delete comment?'}, :class => "brown-text text-lighten-2" %>
 			   		</div>
 			  	</div>
 				</div>
@@ -27,6 +27,6 @@
 	<% end %>
 
 	<div class="center">
-		<%= link_to 'Add Comment', new_product_comment_path(@product), class: 'btn teal' %>
+		<%= link_to 'Add Comment', new_product_comment_path(@product), class: 'btn brown' %>
 	</div>
 </div>

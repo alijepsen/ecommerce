@@ -9,12 +9,12 @@
 		    	<p><%= @comment.review %></p>
 		  	</div>
 		  	<div class="card-action">
-		  		<%= link_to 'Edit', edit_product_comment_path(@product, @comment), :class => "teal-text text-lighten-2" %>
-		  		<%= link_to 'Delete', product_comment_path(@product, @comment), method: :delete, data: {confirm: 'Really delete comment?'}, :class => "teal-text text-lighten-2" %>
+		  		<%= link_to 'Edit', edit_product_comment_path(@product, @comment), :class => "brown-text text-lighten-2" %>
+		  		<%= link_to 'Delete', product_comment_path(@product, @comment), method: :delete, data: {confirm: 'Really delete comment?'}, :class => "brown-text text-lighten-2" %>
 		 		</div>
 			</div>
 		</div>
 	</div>
 
-	<%= link_to '<< Back To Product', category_product_path(@category, @product), class: 'btn teal' %>
+	<%= link_to '<< Back To Product', category_product_path(@category, @product), class: 'btn brown' %>
 </div>
