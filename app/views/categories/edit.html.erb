@@ -1,6 +1,7 @@
-<h2 class="brown">Editing Shop</h2>
+<h2 class="brown">Editing Shop: <%=@category.style %></h2>
 
 <%= render 'form', category: @category %>
+<br /><br />
+<%= link_to 'Show', @category, class: 'brown-text' %> |
+<%= link_to 'Back', categories_path, class: 'brown-text' %>
 
-<%= link_to 'Show', @category %> |
-<%= link_to 'Back', categories_path %>

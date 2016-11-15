@@ -1,12 +1,10 @@
-
-<div class= "container">
 <%= form_for @category do |f| %>
 
   <div class="field">
     <%= f.label :style %>
     <%= f.text_field :style %>
   </div>
-<%= f.submit class: "btn white-text" %>
+<%= f.submit 'Submit', class: "brown btn white-text" %>
 
 <% end %>
-</div>
+
