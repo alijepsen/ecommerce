@@ -31,3 +31,19 @@ h2 {
 label, input {
   color: #795548;
 }
+
+.flash {
+  text-align: center;
+  height: 25px;
+  font-size: 15px;
+  color: white;
+}
+
+
+.flash.alert {
+  background-color: red;
+}
+
+.flash.notice {
+  background-color: green;
+}
