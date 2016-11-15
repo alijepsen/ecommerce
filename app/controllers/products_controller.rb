@@ -29,6 +29,10 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    if current_user.id != @product.category.user_id
+      flash[:error] = 'That does not belong to you!'
+      redirect_to category_products_path(@category)
+    end
   end
 
   def update
@@ -40,8 +44,13 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to category_products_path(@category)
+    if current_user.id != @product.user_id
+      flash[:error] = 'That does not belong to you!'
+      redirect_to category_products_path(@category)
+    else
+      @product.destroy
+      redirect_to category_products_path(@category)
+    end
   end
 
   def all_products

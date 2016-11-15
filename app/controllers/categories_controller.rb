@@ -23,6 +23,10 @@ skip_before_action :authenticate_user!, only: [:index]
   end
 
   def edit
+    if current_user.id != @category.user_id
+      flash[:error] = 'That shop does not belong to you!'
+      redirect_to categories_path
+    end
   end
 
   def update
@@ -34,8 +38,13 @@ skip_before_action :authenticate_user!, only: [:index]
 end
 
   def destroy
-    @category.destroy
-    redirect_to categories_path
+    if current_user.id != @category.user_id
+      flash[:error] = 'That shop does not belong to you!'
+      redirect_to categories_path
+    else
+      @category.destroy
+      redirect_to categories_path
+    end
   end
 
   private
