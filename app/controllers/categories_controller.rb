@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
 before_action :set_category, only: [:edit, :update, :show, :destroy]
+skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @categories = Category.all
@@ -9,11 +10,11 @@ before_action :set_category, only: [:edit, :update, :show, :destroy]
   end
 
   def new
-    @category = Category.new
+    @category = current_user.categories.new
   end
 
   def create
-    @category = Category.new(category_params)
+    @category = current_user.categories.new(category_params)
     if @category.save
       redirect_to category_products_path(@category)
     else

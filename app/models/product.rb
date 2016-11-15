@@ -3,6 +3,6 @@ class Product < ApplicationRecord
   belongs_to :category
 
   has_attached_file :avatar, styles: {
-    large: "500x500>", medium: "400x400>", small: "300x300>", thumb: "150x150#"}
+    large: "500x500>", medium: "400x400>", small: "300x300>", thumb: "150x150#"}, default_url: "app/assets/images/no-image.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 end

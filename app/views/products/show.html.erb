@@ -1,4 +1,4 @@
-<%= link_to "<< Back To All #{@category.style} Products", category_products_path(@category), class: 'btn' %>
+<%= link_to "View All #{@category.style} Products", category_products_path(@category), class: 'btn brown' %>
 
 <div class='center'>
 <h1><%= @product.name %></h1>
@@ -16,10 +16,14 @@
   Image: <i><%= image_tag @product.avatar.url(:medium) %></i>
 </div>
 <br /><br />
+<% if user_signed_in? %>
+  <% if current_user.id == @category.user_id %>
 <div class="container">
 <%= link_to 'Edit', edit_category_product_path(@category, @product), class: "brown-text text-lighten-2" %> |
 <%= link_to 'Delete', category_product_path(@category, @product), class: "brown-text text-lighten-2", method: :delete, data: {confirm: 'Really Delete Product?'} %>
 </div>
+<% end %>
+<% end %>
 <br /><br />
 <hr />
 

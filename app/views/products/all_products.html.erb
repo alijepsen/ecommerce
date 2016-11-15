@@ -1,4 +1,4 @@
-<h2 class="brown">Shop: <%= @category.style %> </h2>
+<h2>all products</h2>
 
 <% if @products.any? %>
   <h3 class="brown-text">Products</h3>
@@ -14,11 +14,11 @@
                <p> Price: <%= product.price %> </p>
              </div>
            <div class="card-action">
-             <%= link_to 'Show', category_product_path(@category, product), :class => "brown-text text-lighten-2" %>
+             <%= link_to 'Show', category_product_path(product.category, product), :class => "brown-text text-lighten-2" %>
              <% if user_signed_in? %>
-             <% if current_user.id == @category.user_id %>
-             <%= link_to 'Edit', edit_category_product_path(@category, product), class: "brown-text text-lighten-2" %>
-             <%= link_to 'Delete', category_product_path(@category, product), class: "brown-text text-lighten-2", method: :delete, data: {confirm: 'Really Delete?'} %>
+             <% if current_user.id == product.category.user_id %>
+             <%= link_to 'Edit', edit_category_product_path(product.category, product), class: "brown-text text-lighten-2" %>
+             <%= link_to 'Delete', category_product_path(product.category, product), class: "brown-text text-lighten-2", method: :delete, data: {confirm: 'Really Delete?'} %>
              <% end %>
              <% end %>
            </div>
@@ -34,9 +34,3 @@
     </div>
 <% end %>
 
-
-<% if user_signed_in? %>
-  <% if current_user.id == @category.user_id %>
-  <%= link_to 'Add Product', new_category_product_path(@category), class: 'btn brown' %>
-<% end %>
-<% end %>

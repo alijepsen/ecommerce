@@ -3,8 +3,14 @@
     <a href="/" class="brand-logo center">T-Shirt Town</a>
     <ul id="nav-mobile" class="right">
       <li><a href="/about">About</a></li>
-      <li><a href="/categories">Categories</a></li>
-      <li><% link_to 'Categories', categories_path %></li>
+      <li><%= link_to 'Shops', categories_path %></li>
+      <li><%= link_to 'All Products', all_products_path %></li>
+      <% if user_signed_in? %>
+        <li>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Login', new_user_session_path %></li>
+      <% end %>
     </ul>
   </div>
 </nav>

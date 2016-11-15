@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :set_category
+  before_action :set_category, except: [:all_products]
 
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create, :all_products]
+
+  skip_before_action :authenticate_user!, only: [:index, :show, :all_products]
 
 
   def index
@@ -40,6 +42,10 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     redirect_to category_products_path(@category)
+  end
+
+  def all_products
+   @products = Product.all
   end
 
   private

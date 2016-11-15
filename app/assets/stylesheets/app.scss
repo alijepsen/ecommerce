@@ -1,0 +1,33 @@
+body {
+  font-family: copperplate;
+  font-size: 30px;
+  background: #ffab40;
+  color: #ffd180;
+}
+
+h1 {
+  font-family: copperplate;
+  font-size: 70px;
+  /*background: brown;*/
+  color: #ffd180;
+  text-align: center;
+}
+
+#home-logo {
+  font-size: 150px;
+  background-image: url(town-logo.jpg);
+  width: 100%;
+  height: 500px;
+}
+
+#home-logo h1 {
+  text-shadow: 3px 3px 0px #000;
+}
+
+h2 {
+  text-align: center;
+}
+
+label, input {
+  color: #795548;
+}

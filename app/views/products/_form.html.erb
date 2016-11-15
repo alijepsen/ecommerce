@@ -2,7 +2,7 @@
   <div class="row">
     <%= form_for [@category, @product], html: { multipart: true} do |f| %>
       <div class="col m6">
-        <%= f.label :name %>
+        <%= f.label :name, class: 'brown-text' %>
         <%= f.text_field :name, required: true %>
       </div>
       <div class="col m6">
@@ -17,17 +17,20 @@
         <%= f.label :inventory %>
         <%= f.number_field :inventory %>
       </div>
-      <div class="file-field input-field col s12">
-        <div class="btn">
-          <span>Image File</span>
+      <div class="file-field input-field col s6 offset-s4">
+        <div class="btn orange accent-4">
+          <span>Add Image</span>
         </div>
         <div class="file-path-wrapper">
-          <input class="file-path validate" type="text" placeholder="Upload image file here">
+          <!--<input class="file-path validate" type="text">-->
           <%= f.file_field :avatar %>
         </div>
       </div>
       </div>
+      <div class="center">
       <%= f.submit class: "btn brown white-text" %>
+       </div>
     <% end %>
+
   </div>
 </div>
