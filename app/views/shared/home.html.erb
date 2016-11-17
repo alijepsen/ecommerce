@@ -4,3 +4,11 @@
 </div>
 <p><em>a DPL company</em></p>
 </div>
+<h4> Subscribe to our newsletter </h4>
+<%= form_for :subscriber, url: url_for(controller: 'shared', action: 'create') do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true %>
+  <%= f.label :email %>
+  <%= f.email_field :email, required: true %>
+  <%= f.submit "Subscribe" %>
+<% end %>

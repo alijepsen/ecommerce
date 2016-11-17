@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'all_products', to: 'products#all_products'
 
+  post 'signups/create', to: 'shared#create', as: 'signups'
+
   resources :carts do
   	resources :products
   end
@@ -17,5 +19,6 @@ Rails.application.routes.draw do
   resources :products do
   	resources :comments
   end
+
 
 end
