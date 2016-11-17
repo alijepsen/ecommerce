@@ -1,0 +1,29 @@
+<h1>Send a T-Shirt Townletter</h1>
+
+<%= form_tag newsletter_index_path do %>
+  <div>
+    <%= label_tag 'Subject' %>
+    <br />
+    <%= text_area_tag 'subject', nil, placeholder: 'Subject', cols: '20', rows: '6', required: true %>
+  </div>
+  <br /><br />
+
+  <div>
+    <%= label_tag 'Emails (*comma separated)' %>
+    <br />
+    <%= text_area_tag 'emails', nil, placeholder: 'tshirt@town.com', required: true, cols: '20', rows: '6' %>
+  </div>
+  <br /><br />
+  <hr />
+
+  <div>
+    <%= label_tag 'Newsletter Type' %>
+    <br />
+      <%= select_tag 'newsletter', options_for_select(['weekly', 'monthly']) %>
+  </div>
+
+  <hr />
+  <br /><br />
+  <%= submit_tag 'Send' %>
+<% end %>
+
