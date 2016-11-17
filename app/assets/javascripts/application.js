@@ -16,4 +16,7 @@
 //= require_tree .
 $(document).ready(function(){
   $(".dropdown-button").dropdown();
+  $('select').material_select();
 });
+
+

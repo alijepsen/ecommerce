@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   post 'signups/create', to: 'shared#create', as: 'signups'
 
+  get 'newsletter/new', to: 'newsletter#new', as: 'newsletter'
+
   resources :carts do
   	resources :products
   end
@@ -20,5 +22,6 @@ Rails.application.routes.draw do
   	resources :comments
   end
 
+  resources :newsletter
 
 end

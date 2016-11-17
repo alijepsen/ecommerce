@@ -1,29 +1,14 @@
-<h1>Send a T-Shirt Townletter</h1>
+<h1 class="brown-text">Send a T-Shirt Townletter</h1>
 
 <%= form_tag newsletter_index_path do %>
-  <div>
+
     <%= label_tag 'Subject' %>
-    <br />
-    <%= text_area_tag 'subject', nil, placeholder: 'Subject', cols: '20', rows: '6', required: true %>
-  </div>
-  <br /><br />
-
-  <div>
+    <%= text_field_tag 'subject', nil, cols: '20', rows: '6', required: true, class: 'input-field' %>
     <%= label_tag 'Emails (*comma separated)' %>
-    <br />
-    <%= text_area_tag 'emails', nil, placeholder: 'tshirt@town.com', required: true, cols: '20', rows: '6' %>
-  </div>
-  <br /><br />
-  <hr />
-
-  <div>
+    <%= text_field_tag 'emails', nil, required: true, cols: '20', rows: '6', class: 'input-field' %>
     <%= label_tag 'Newsletter Type' %>
-    <br />
-      <%= select_tag 'newsletter', options_for_select(['weekly', 'monthly']) %>
-  </div>
-
-  <hr />
-  <br /><br />
-  <%= submit_tag 'Send' %>
+      <%= select_tag "newsletter", options_for_select(['weekly', 'monthly']), class: 'input-field' %>
+  <br />
+  <%= submit_tag 'Send', class: 'orange darken-4 btn' %>
 <% end %>
 
