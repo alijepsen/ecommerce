@@ -1,14 +1,21 @@
 <h1 class="brown-text">Send a T-Shirt Townletter</h1>
-
+<div class="container">
 <%= form_tag newsletter_index_path do %>
-
+  <div class="input-field">
     <%= label_tag 'Subject' %>
-    <%= text_field_tag 'subject', nil, cols: '20', rows: '6', required: true, class: 'input-field' %>
+    <%= text_field_tag 'subject', nil, cols: '20', rows: '6', required: true %>
+  </div>
+  <div class="input-field">
     <%= label_tag 'Emails (*comma separated)' %>
-    <%= text_field_tag 'emails', nil, required: true, cols: '20', rows: '6', class: 'input-field' %>
+    <%= text_field_tag 'emails', nil, required: true, cols: '20', rows: '6' %>
+  </div>
+  <div class="input-field">
     <%= label_tag 'Newsletter Type' %>
-      <%= select_tag "newsletter", options_for_select(['weekly', 'monthly']), class: 'input-field' %>
   <br />
-  <%= submit_tag 'Send', class: 'orange darken-4 btn' %>
+    <%= select_tag "newsletter", options_for_select(['weekly', 'monthly']) %>
+  </div>
+  <div class="input-field">
+    <%= submit_tag 'Send', class: 'orange darken-4 btn' %>
+  </div>
 <% end %>
-
+</div>
